@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Penthouse Café</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Times New Roman', serif;
+      background: url('https://i.pinimg.com/736x/b6/dc/3f/b6dc3f2f1f315120b011b4f149f3a8e5.jpg') no-repeat center center/cover;
+      color: white;
+    }
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .nav-links li a:hover {
+    cursor: pointer;
+    color: #ffd700;
+  }
+  
+ .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .loader span {
+      width: 20px;
+      height: 20px;
+      margin: 5px;
+      background: #53daff;
+      border-radius: 50%;
+      animation: bounce 0.6s infinite alternate;
+    }
+
+    .loader span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loader span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes bounce {
+      to {
+        transform: translateY(-25px);
+        opacity: 0.6;
+      }
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
+      margin: 120px auto 40px auto;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form input,
+    form textarea,
+    form button,
+    .swiggy-btn {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    form input,
+    form textarea {
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    form textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    .btn {
+      background-color: #53daff;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(143, 214, 255, 0.6);
+    }
+
+    .swiggy-btn {
+      background: linear-gradient(45deg, #9060ff, #c29cff);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 15px;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .swiggy-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(255, 65, 108, 0.6);
+    }
+
+    .testimonial {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 600px;
+      margin: 30px auto;
+      text-align: center;
+      font-style: italic;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    footer p {
+      margin: 5px;
+      color: #ccc;
+    }
+
+    footer a {
+      color: #53daff;
+      margin: 0 8px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loader" id="loader">
+    <span></span><span></span><span></span>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">Cafe Hunt</div>
+  <ul class="nav-links">
+    <li><a href="penthousecafe.html">Home</a></li>
+    <li><a href="penthouseabout.html">About</a></li>
+    <li><a href="penthousemenu.html">Menu</a></li>
+    <li><a href="penthousebooking.html">Booking/Order</a></li>
+    <li><a href="penthousepayment.html">Payment</a></li>
+    <li><a href="penthouselocation.html">Location</a></li>
+    <li><a href="penthousereview.html">Review</a></li>
+  </ul>
+</nav>
+
+  <div class="container">
+    <h1>Make an Order</h1>
+    <form id="bookingForm">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="date" name="date" required>
+      <input type="time" name="time" required>
+      <textarea name="orderDetails" placeholder="Your Order Details" required></textarea>
+      <button type="submit" class="btn">Book Now</button>
+    </form>
+    <a href="https://www.swiggy.com" target="_blank" class="swiggy-btn">Order on Swiggy 🍔</a>
+  </div>
+
+  <div class="testimonial" id="testimonial">
+    <p>“Absolutely loved the ambience and the food! Great service and smooth online booking.”<br>— A happy customer</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 The Penthouse Café</p>
+    <p>
+      <a href="#">Instagram</a> |
+      <a href="#">Facebook</a> |
+      <a href="#">Contact Us</a>
+    </p>
+  </footer>
+
+  <script>
+    window.onload = () => {
+      document.getElementById("loader").style.display = "none";
+    };
+
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("🎉 Booking confirmed! Thank you for choosing The Penthouse Café.");
+      this.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cafe Grind Booking</title>
+      <link rel="stylesheet" href="css/roastrybooking.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f3e9dc, #f7f1ea);
+       background-repeat: no-repeat;
+       background-position: center;
+       background-attachment: fixed;
+      background: url('https://roasterycoffee.co.in/wp-content/uploads/2025/04/DSC05318-1024x683.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
+      color: #fff;
+      
+    }
+
+    .booking-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #fffdfc;
+      padding: 35px 45px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+      border-radius: 14px;
+      animation: fadeInZoom 0.6s ease-out;
+    }
+
+    @keyframes fadeInZoom {
+      0% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .booking-container h2 {
+      text-align: center;
+      color: #5a3825;
+      margin-bottom: 30px;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #4a3a2c;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      background-color: #fff;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #999;
+      font-style: italic;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #b4875a;
+      box-shadow: 0 0 8px rgba(180, 135, 90, 0.2);
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      width: 100%;
+      background: linear-gradient(135deg, #b4875a, #a36b42);
+      color: white;
+      padding: 14px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #a36b42, #8d5432);
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 640px) {
+      .booking-container {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">THF</div>
+        <ul class="nav-links">
+            <li><a href="Roastryhome.html">Home</a></li>
+            <li><a href="ROASTRYabout.html">About</a></li>
+            <li><a href="roastrymenu.html">menu</a></li>
+            <li><a href="roastrybooking.html">booking</a></li>
+            <li><a href="roastrylocation.html">Location</a></li>
+            <li><a href="roastryreview.html">Review</a></li>
+        </ul>
+    </nav>
+
+  <div class="booking-container">
+    <h2>Book a Table at Cafe Grind</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="e.g. 123-456-7890" required />
+      </div>
+
+      <div class="form-group">
+        <label for="date">Booking Date</label>
+        <input type="date" id="date" required />
+      </div>
+
+      <div class="form-group">
+        <label for="time">Booking Time</label>
+        <input type="time" id="time" required />
+      </div>
+
+      <div class="form-group">
+        <label for="guests">Number of Guests</label>
+        <select id="guests" required>
+          <option value="">Select number</option>
+          <option value="1">1 Guest</option>
+          <option value="2">2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+          <option value="5+">5 or more</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="requests">Special Requests</label>
+        <textarea id="requests" placeholder="Any allergies, seating preferences, etc."></textarea>
+      </div>
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </div>
+
+</body>
+</html>

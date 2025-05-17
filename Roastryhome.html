@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>THF Baskets</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ce9b76;
+      background-size: cover;
+      overflow-x: hidden;
+      color: #fff;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px 40px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .nav-links li a:hover {
+      cursor: pointer;
+      color: #ffd700;
+    }
+
+    .hero-section {
+      position: relative;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .sub-head {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .cafe-section {
+      background-color: #fff8f0;
+      border-radius: 15px;
+      padding: 40px;
+      max-width: 600px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      transition: all 0.3s ease;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .cafe-section:hover {
+      transform: scale(1.02);
+      background-color: #fff0e6;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .cafe-heading {
+      font-size: 2.5rem;
+      color: #d2691e;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: slideIn 1s ease forwards;
+    }
+
+    .cafe-text {
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeInText 1.2s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInText {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .slider {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      margin: 40px 0;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .navigation {
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      bottom: 10px;
+    }
+
+    .navigation label {
+      cursor: pointer;
+      padding: 6px;
+      margin: 0 5px;
+      background-color: #333;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    #slide1:checked ~ .slides {
+      transform: translateX(0);
+    }
+
+    #slide2:checked ~ .slides {
+      transform: translateX(-100%);
+    }
+
+    #slide3:checked ~ .slides {
+      transform: translateX(-200%);
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 300px;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-body h3 {
+      color: #c1440e;
+      margin-bottom: 10px;
+    }
+
+    .card-body p {
+      color: #333;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Bubble cursor effect */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      width: 20px;
+      height: 20px;
+      background: rgba(0, 123, 255, 0.6);
+      animation: fadeOut 0.6s forwards;
+    }
+
+    @keyframes fadeOut {
+      to {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">Cafe Hunt</div>
+      <ul class="nav-links">
+        <li><a href="Roastryhome.html">Home</a></li>
+        <li><a href="ROASTRYabout.html">About</a></li>
+        <li><a href="roastrymenu.html">Menu</a></li>
+        <li><a href="roastrybooking.html">Booking/Order</a></li>
+        <li><a href="roastrylocation.html">Location</a></li>
+        <li><a href="roastryreview.html">Review</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero-section">
+      <img src="https://b.zmtcdn.com/data/reviews_photos/d65/dcee818da5460a5b3f750fc002825d65_1740745089.jpg?fit=around|750:500&crop=750:500;*,*" alt="THF Baskets" class="hero-image" />
+      <div class="hero-text">
+        <h1>"Roastry"</h1>
+        <p>Exquisite baskets designed for gifting, combining elegance and taste.</p>
+      </div>
+    </div>
+
+    <div class="sub-head">
+      <div class="cafe-section">
+        <h2 class="cafe-heading">Welcome to Brew & Bean Cafe</h2>
+        <p class="cafe-text">
+          Nestled in the heart of the city, Brew & Bean offers a cozy escape for coffee lovers.
+          Enjoy handcrafted espresso, locally sourced pastries, and a relaxing atmosphere perfect for catching up or winding down.
+          Come sip, savor, and stay awhile!
+        </p>
+      </div>
+    </div>
+
+    <!-- Slider Radio Buttons -->
+    <input type="radio" name="slider" id="slide1" checked />
+    <input type="radio" name="slider" id="slide2" />
+    <input type="radio" name="slider" id="slide3" />
+
+    <!-- Slider -->
+    <section class="slider">
+      <div class="slides">
+        <div class="slide"><img src="https://content.jdmagicbox.com/comp/lucknow/d3/0522px522.x522.220922233938.d8d3/catalogue/roastery-coffee-house-indira-nagar-lucknow-lucknow-8zm0o8io9k.jpg" alt="Basket 1" /></div>
+        <div class="slide"><img src="https://assets.architecturaldigest.in/photos/63aa04608df6b9fdb924d692/master/w_1600%2Cc_limit/Noida1.jpeg" alt="Basket 2" /></div>
+        <div class="slide"><img src="https://i.pinimg.com/736x/57/7f/10/577f101653a42d3209bf660744b40f3e.jpg" alt="Basket 3" /></div>
+      </div>
+      <div class="navigation">
+        <label for="slide1"></label>
+        <label for="slide2"></label>
+        <label for="slide3"></label>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="card-container">
+      <div class="card">
+        <img src="https://content3.jdmagicbox.com/comp/lucknow/d3/0522px522.x522.220922233938.d8d3/catalogue/roastery-coffee-house-indira-nagar-lucknow-lucknow-uadktvoec4.jpg" alt="Gift Basket 1" />
+        <div class="card-body">
+          <h3>Classic Basket</h3>
+          <p>A refined mix of gourmet delights for any occasion.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://b.zmtcdn.com/data/pictures/7/21557097/2b89ab1691aa7d6bb8c3fcef8280d11c.jpg" alt="Gift Basket 2" />
+        <div class="card-body">
+          <h3>Deluxe Basket</h3>
+          <p>Premium goods in a luxe presentation to impress anyone.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 THF Baskets. All rights reserved.
+  </footer>
+
+</body>
+</html>

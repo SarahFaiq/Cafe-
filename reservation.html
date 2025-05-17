@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cafe Table Reservation</title>
+  <link rel="stylesheet" href="css/reservation.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Cafe Hunt</div>
+        <ul class="nav-links">
+            <li><a href="hazelmenu.html">Home</a></li>
+            <li><a href="hazelabout.html">About</a></li>
+             <li><a href="menu.html">Menu ▾</a>  </li>
+            <li><a href="reservation.html">Booking/Order ▾</a> </li>
+             <li><a href="location.html">Location</a></li>
+            <li><a href="review.html">Review</a></li>
+        </ul>
+    </nav>
+
+    
+
+  <div class="container">
+    <h1>Book Your Table</h1>
+    <form class="booking-form" action="#" method="POST">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="date">Reservation Date</label>
+        <input type="date" id="date" name="date" required />
+      </div>
+
+      <div class="form-group">
+        <label for="time">Time</label>
+        <input type="time" id="time" name="time" required />
+      </div>
+
+      <div class="form-group">
+        <label for="guests">Number of Guests</label>
+        <input type="number" id="guests" name="guests" min="1" max="20" required />
+      </div>
+
+      <div class="form-group">
+        <label for="requests">Special Requests</label>
+        <textarea id="requests" name="requests" rows="4" placeholder="Any dietary needs or seating preference..."></textarea>
+      </div>
+
+      <button type="submit">Reserve Table</button>
+    </form>
+  </div>
+</body>
+</html>

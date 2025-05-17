@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu Showcase</title>
+  <style>
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', serif;
+    cursor: default;
+  }
+  
+  body, html {
+    height: 100%;
+  }
+
+    *, *:before, *:after {
+      box-sizing: border-box;
+      transition: all 0.5s ease;
+    }
+    body {
+      background: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/f6/f5/70/img-20191107-195129-largejpg.jpg?w=900&h=500&s=1') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      font-family: sans-serif;
+
+    }
+   
+  /* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  color: white; /* Ensures text is visible */
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  cursor: pointer;
+  color: #ffd700;
+}
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+
+    .container.closed header { cursor: pointer; }
+    header { cursor: pointer; }
+
+ 
+    .header {
+      width: 100%;
+      height: 250px;
+      background: center / cover;
+    }
+
+    .title {
+      position: relative;
+      z-index: 1;
+      font-size: 2rem;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-top: 0px;
+    }
+
+    .container.closed .title {
+      padding: 40px 20px 10px 20px;
+      margin-top: -87px;
+      color: white;
+      border: none;
+    }
+
+    .title:before {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+      opacity: 0;
+    }
+
+    .container.closed .title:before {
+      opacity: 1;
+    }
+
+    article {
+      padding: 25px 30px;
+      overflow: hidden;
+      max-height: 400px;
+    }
+
+    .container.closed article {
+      max-height: 0px;
+      padding: 0 30px;
+    }
+
+    table {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .details {
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+ 
+  <nav class="navbar">
+    <div class="logo">Cafe Grind</div>
+    <ul class="nav-links">
+      <li><a href="terrace.html">Home</a></li>
+      <li><a href="terraceabout.html">About</a></li>
+      <li><a href="terracemenu.html">Menu</a></li>
+      <li><a href="terracebooking.html">Booking/Order</a></li>
+      <li><a href="terracepayment.html">Payment</a></li>
+      <li><a href="terracelocation.html">Location</a></li>
+      <li><a href="terracereview.html">Review</a></li>
+    </ul>
+  </nav>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <!-- Chinese -->
+<div class="container closed">
+  <header>
+    <div class="header" style="background-image: url('https://images-cdn.welcomesoftware.com/Zz0zMDM2ZWM5NmQ5YjAxMWViODcwYmI5NWUzYmNlYzM0NA==/Zz01NTg2OGYyMmQ4MmYxMWViOGM4NjRkNDA4MzFmNzQ4OA%3D%3D.jpg?width=1366');"></div>
+    <div class="title">Chinese</div>
+  </header>
+  <article>
+    <h1>Chinese Menu</h1>
+    <table>
+      <tr><td>Veg Hakka Noodles</td><td align="right">₹180</td></tr>
+      <tr><td>Chilli Chicken</td><td align="right">₹220</td></tr>
+      <tr><td>Manchurian Gravy</td><td align="right">₹200</td></tr>
+      <tr><td>Spring Rolls</td><td align="right">₹150</td></tr>
+      <tr><td>Sweet & Sour Paneer</td><td align="right">₹210</td></tr>
+    </table>
+    <div class="details">A savory selection of Indo-Chinese delights with bold spices and sauces.</div>
+  </article>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!-- Indian -->
+<div class="container closed">
+  <header>
+    <div class="header" style="background-image: url('https://www.tastingtable.com/img/gallery/20-delicious-indian-dishes-you-have-to-try-at-least-once/intro-1733153567.jpg');"></div>
+    <div class="title">Indian</div>
+  </header>
+  <article>
+    <h1>Indian Menu</h1>
+    <table>
+      <tr><td>Butter Chicken</td><td align="right">₹290</td></tr>
+      <tr><td>Paneer Butter Masala</td><td align="right">₹250</td></tr>
+      <tr><td>Dal Makhani</td><td align="right">₹200</td></tr>
+      <tr><td>Naan/Roti (per piece)</td><td align="right">₹25</td></tr>
+      <tr><td>Biryani (Veg/Chicken)</td><td align="right">₹260</td></tr>
+    </table>
+    <div class="details">Authentic Indian flavors served with aromatic spices and rich gravies.</div>
+  </article>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!-- Mexican -->
+<div class="container closed">
+  <header>
+    <div class="header" style="background-image: url('https://www.studyspanishlatinamerica.com/blog/wp-content/uploads/2021/06/guide-to-popular-mexican-food.jpg');"></div>
+    <div class="title">Mexican</div>
+  </header>
+  <article>
+    <h1>Mexican Menu</h1>
+    <table>
+      <tr><td>Tacos (Veg/Chicken)</td><td align="right">₹180</td></tr>
+      <tr><td>Nachos with Cheese</td><td align="right">₹160</td></tr>
+      <tr><td>Mexican Rice Bowl</td><td align="right">₹200</td></tr>
+      <tr><td>Quesadillas</td><td align="right">₹210</td></tr>
+      <tr><td>Burritos</td><td align="right">₹230</td></tr>
+    </table>
+    <div class="details">Spicy, flavorful Mexican treats filled with zesty ingredients and melted cheese.</div>
+  </article>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!-- Sweets -->
+<div class="container closed">
+  <header>
+    <div class="header" style="background-image: url('https://www.prabhatkhabar.com/wp-content/uploads/2024/02/aa-2-1.jpg');"></div>
+    <div class="title">Sweets</div>
+  </header>
+  <article>
+    <h1>Sweets Menu</h1>
+    <table>
+      <tr><td>Gulab Jamun</td><td align="right">₹40/pc</td></tr>
+      <tr><td>Rasgulla</td><td align="right">₹35/pc</td></tr>
+      <tr><td>Jalebi</td><td align="right">₹60 (100g)</td></tr>
+      <tr><td>Kaju Katli</td><td align="right">₹90 (100g)</td></tr>
+      <tr><td>Besan Ladoo</td><td align="right">₹70 (100g)</td></tr>
+    </table>
+    <div class="details">Traditional Indian desserts to satisfy your sweet tooth with rich flavors.</div>
+  </article>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!-- Soups -->
+<div class="container closed">
+  <header>
+    <div class="header" style="background-image: url('https://vaya.in/careers/wp-content/uploads/2021/06/10-Warm-and-Healthy-Soups-to-Comfort-You.jpg');"></div>
+    <div class="title">Soups</div>
+  </header>
+  <article>
+    <h1>Soups Menu</h1>
+    <table>
+      <tr><td>Tomato Basil Soup</td><td align="right">₹120</td></tr>
+      <tr><td>Hot & Sour Soup</td><td align="right">₹130</td></tr>
+      <tr><td>Sweet Corn Soup</td><td align="right">₹110</td></tr>
+      <tr><td>Chicken Clear Soup</td><td align="right">₹140</td></tr>
+      <tr><td>Manchow Soup</td><td align="right">₹125</td></tr>
+    </table>
+    <div class="details">Warm and comforting soups to start your meal with a cozy touch.</div>
+  </article>
+</div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <!-- JavaScript for toggling -->
+  <script>
+    document.querySelectorAll(".container header").forEach(header => {
+      header.addEventListener("click", function () {
+        this.parentElement.classList.toggle("closed");
+      });
+    });
+  </script>
+
+</body>
+</html>

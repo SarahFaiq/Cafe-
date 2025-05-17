@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Aroma - Reviews</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            background: url('https://i.pinimg.com/736x/b0/92/85/b09285fa25768a4201c0d1d1da44689b.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+       /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px ;
+    position: fixed;
+    width: 99%;
+    top: 0;
+    z-index: 9999;
+  }
+  
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .nav-links li a:hover {
+    cursor: pointer;
+    color: #ffd700;
+  }
+        .container {
+            background-color: rgba(0, 0, 0, 0.6);
+            margin: 2em auto;
+            padding: 2em;
+            width: 60%;
+            border-radius: 10px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .review {
+            border-bottom: 1px solid #ccc;
+            padding: 1em 0;
+        }
+        .review:last-child {
+            border-bottom: none;
+        }
+        .review p {
+            margin: 0.5em 0;
+        }
+        form {
+            margin-top: 2em;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 1em;
+            margin: 0.5em 0;
+            border: none;
+            border-radius: 5px;
+        }
+        form button {
+            padding: 1em 2em;
+            background-color: #f4a261;
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+   <!-- Navigation Bar -->
+    <br><br><br>
+   <nav class="navbar">
+    <div class="logo">Cafe Grind</div>
+    <ul class="nav-links">
+      <li><a href="penthousecafe.html">Home</a></li>
+      <li><a href="penthouseabout.html">About</a></li>
+      <li><a href="penthousemenu.html">Menu</a></li>
+      <li><a href="penthousebooking.html">Booking/Order</a></li>
+      <li><a href="penthousepayment.html">Payment</a></li>
+      <li><a href="penthouselocation.html">Location</a></li>
+      <li><a href="penthousereview.html">Review</a></li>
+    </ul>
+  </nav>
+    <div class="container">
+        <h1>Customer Reviews</h1>
+        <div id="reviews">
+            <div class="review">
+                <p><strong>Emily R.</strong></p>
+                <p>The coffee here is absolutely delightful. Cozy vibes and great music!</p>
+            </div>
+            <div class="review">
+                <p><strong>Jason L.</strong></p>
+                <p>Best place in town to chill and get some work done. Love the atmosphere.</p>
+            </div>
+            <div class="review">
+                <p><strong>Sophia M.</strong></p>
+                <p>The staff are super friendly and their pastries are to die for!</p>
+            </div>
+        </div>
+
+        <h2>Leave a Review</h2>
+        <form id="reviewForm" onsubmit="event.preventDefault(); submitReview();">
+            <input type="text" id="name" placeholder="Your Name" required />
+            <textarea id="message" rows="5" placeholder="Write your review here..." required></textarea>
+            <button type="submit">Submit Review</button>
+        </form>
+    </div>
+
+    <script>
+        function submitReview() {
+            const name = document.getElementById("name").value;
+            const message = document.getElementById("message").value;
+            if(name && message) {
+                const reviewsSection = document.getElementById("reviews");
+                const newReview = document.createElement("div");
+                newReview.classList.add("review");
+                newReview.innerHTML = `<p><strong>${name}</strong></p><p>${message}</p>`;
+                reviewsSection.prepend(newReview);
+                document.getElementById("reviewForm").reset();
+            } else {
+                alert("Please fill out both fields.");
+            }
+        }
+    </script>
+</body>
+</html>

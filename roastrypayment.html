@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cafe Grind - Payment</title>
+  <style>
+
+    
+    * {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-size:cover;
+      overflow-x: hidden;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #faf3e0, #fcefdc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      perspective: 1000px;
+    }
+    
+
+    header {
+     background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;-
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #007bff;
+    }
+    
+
+    
+    .payment-container {
+      width: 90%;
+      max-width: 440px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      transform-style: preserve-3d;
+      animation: floatIn 0.7s ease;
+      transition: transform 0.4s ease;
+    }
+
+    .payment-container:hover {
+      transform: rotateX(2deg) rotateY(2deg) scale(1.01);
+    }
+
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    h2 {
+      text-align: center;
+      color: #5b3a2f;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: #4a3a2c;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+
+    input:focus {
+      border-color: #b4875a;
+      box-shadow: 0 0 10px rgba(180, 135, 90, 0.3);
+      outline: none;
+    }
+
+    .flex-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .flex-row .form-group {
+      flex: 1;
+    }
+
+    button {
+      width: 100%;
+      background: linear-gradient(135deg, #b4875a, #a36b42);
+      color: white;
+      padding: 13px;
+      font-size: 17px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #a36b42, #8d5432);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    button:active {
+      transform: translateY(1px);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    }
+
+    @media (max-width: 500px) {
+      .payment-container {
+        padding: 24px;
+      }
+
+      .flex-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+    <div class="logo">THF</div>
+    <nav>
+      <ul>
+        <nav class="navbar">
+      
+          <ul class="nav-links">
+              <li><a href="Roastryhome.html">Home</a></li>
+              <li><a href="ROASTRYabout.html">About</a></li>
+              <li><a href="roastrymenu.html">Menu</a></li>
+              </li>
+              <li><a href="roastrybooking.html">Booking</a></li>
+              <li><a href="#">Payment</a></li>
+              <li><a href="#">Location</a></li>
+              <li><a href="#">Review</a></li>
+          </ul>
+      </nav>
+    </nav>
+  </header>
+  <div class="payment-container">
+    <h2>Payment for Cafe Grind</h2>
+    <form>
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" placeholder="John Doe" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="john@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="card">Card Number</label>
+        <input type="text" id="card" placeholder="1234 5678 9012 3456" maxlength="19" required>
+      </div>
+
+      <div class="flex-row">
+        <div class="form-group">
+          <label for="expiry">Expiry Date</label>
+          <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required>
+        </div>
+
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" placeholder="123" maxlength="4" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Billing Address</label>
+        <input type="text" id="address" placeholder="123 Coffee St, Bean City" required>
+      </div>
+
+      <button type="submit">Submit Payment</button>
+    </form>
+  </div>
+
+</body>
+</html>

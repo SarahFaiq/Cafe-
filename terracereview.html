@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Café Aroma - Reviews</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      background: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/f6/f5/71/img-20191107-195116-largejpg.jpg?w=900&h=500&s=1') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      position: fixed;
+      width: 99%;
+      top: 0;
+      z-index: 9999;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .nav-links li a:hover {
+      cursor: pointer;
+      color: #ffd700;
+    }
+
+    /* Main Container */
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      margin: 6em auto 2em;
+      padding: 2em;
+      width: 60%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    .review {
+      border-bottom: 1px solid #ccc;
+      padding: 1em 0;
+    }
+
+    .review:last-child {
+      border-bottom: none;
+    }
+
+    .review p {
+      margin: 0.5em 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      max-width: 100%;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      padding: 0.9em;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      background-color: #f8f8f8;
+      color: #000;
+    }
+
+    button {
+      padding: 1em 2em;
+      background-color: #f4a261;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e76f51;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+ <nav class="navbar">
+    <div class="logo">Cafe Grind</div>
+    <ul class="nav-links">
+      <li><a href="terrace.html">Home</a></li>
+      <li><a href="terraceabout.html">About</a></li>
+      <li><a href="terracemenu.html">Menu</a></li>
+      <li><a href="terracebooking.html">Booking/Order</a></li>
+      <li><a href="terracepayment.html">Payment</a></li>
+      <li><a href="terracelocation.html">Location</a></li>
+      <li><a href="terracereview.html">Review</a></li>
+    </ul>
+  </nav>
+
+  <!-- Review Section -->
+  <div class="container">
+    <h1>Customer Reviews</h1>
+    <div id="reviews">
+      <div class="review">
+        <p><strong>Emily R.</strong> - ★★★★☆</p>
+        <p>The coffee here is absolutely delightful. Cozy vibes and great music!</p>
+      </div>
+      <div class="review">
+        <p><strong>Jason L.</strong> - ★★★★★</p>
+        <p>Best place in town to chill and get some work done. Love the atmosphere.</p>
+      </div>
+      <div class="review">
+        <p><strong>Sophia M.</strong> - ★★★★★</p>
+        <p>The staff are super friendly and their pastries are to die for!</p>
+      </div>
+    </div>
+
+    <!-- Review Form -->
+    <h2>Leave a Review</h2>
+    <form id="reviewForm" onsubmit="event.preventDefault(); submitReview();">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <select id="rating" required>
+          <option value="">Select rating</option>
+          <option value="5">★★★★★</option>
+          <option value="4">★★★★☆</option>
+          <option value="3">★★★☆☆</option>
+          <option value="2">★★☆☆☆</option>
+          <option value="1">★☆☆☆☆</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Write Your Review</label>
+        <textarea id="message" rows="4" placeholder="Share your experience..." required></textarea>
+      </div>
+
+      <button type="submit">Submit Review</button>
+    </form>
+  </div>
+
+  <script>
+    function submitReview() {
+      const name = document.getElementById("name").value;
+      const rating = document.getElementById("rating").value;
+      const message = document.getElementById("message").value;
+
+      if (name && rating && message) {
+        const reviewsSection = document.getElementById("reviews");
+        const newReview = document.createElement("div");
+        newReview.classList.add("review");
+        newReview.innerHTML = `<p><strong>${name}</strong> - ${"★".repeat(rating)}${"☆".repeat(5 - rating)}</p><p>${message}</p>`;
+        reviewsSection.prepend(newReview);
+        document.getElementById("reviewForm").reset();
+      } else {
+        alert("Please fill out all fields.");
+      }
+    }
+  </script>
+</body>
+</html>

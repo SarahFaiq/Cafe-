@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu Showcase</title>
+  <style>
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', serif;
+    cursor: default;
+  }
+  
+  body, html {
+    height: 100%;
+  }
+
+    *, *:before, *:after {
+      box-sizing: border-box;
+      transition: all 0.5s ease;
+    }
+    body {
+      background: url('https://b.zmtcdn.com/data/reviews_photos/07d/649a277f9cfa6911c10b52f83e42b07d_1729930617.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      font-family: sans-serif;
+
+    }
+   
+  /* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  color: white; /* Ensures text is visible */
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  cursor: pointer;
+  color: #ffd700;
+}
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+
+    .container.closed header { cursor: pointer; }
+    header { cursor: pointer; }
+
+ 
+    .header {
+      width: 100%;
+      height: 250px;
+      background: center / cover;
+    }
+
+    .title {
+      position: relative;
+      z-index: 1;
+      font-size: 2rem;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-top: 0px;
+    }
+
+    .container.closed .title {
+      padding: 40px 20px 10px 20px;
+      margin-top: -87px;
+      color: white;
+      border: none;
+    }
+
+    .title:before {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+      opacity: 0;
+    }
+
+    .container.closed .title:before {
+      opacity: 1;
+    }
+
+    article {
+      padding: 25px 30px;
+      overflow: hidden;
+      max-height: 400px;
+    }
+
+    .container.closed article {
+      max-height: 0px;
+      padding: 0 30px;
+    }
+
+    table {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .details {
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+ 
+   <!-- Navigation Bar -->
+   <nav class="navbar">
+    <div class="logo">Cafe Grind</div>
+    <ul class="nav-links">
+      <li><a href="penthousecafe.html">Home</a></li>
+      <li><a href="penthouseabout.html">About</a></li>
+      <li><a href="penthousemenu.html">Menu</a></li>
+      <li><a href="penthousebooking.html">Booking/Order</a></li>
+      <li><a href="penthousepayment.html">Payment</a></li>
+      <li><a href="penthouselocation.html">Location</a></li>
+      <li><a href="penthousereview.html">Review</a></li>
+    </ul>
+  </nav>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <!-- Pasta -->
+  <div class="container closed">
+    <header>
+      <div class="header" style="background-image: url('https://static.vecteezy.com/system/resources/previews/038/970/602/large_2x/ai-generated-pasta-with-mushrooms-tomatoes-decorated-with-parsley-basil-serving-fancy-italian-cuisine-food-in-a-restaurant-photo.jpg');"></div>
+      <div class="title">Pasta</div>
+    </header>
+    <article>
+      <h1>Pasta Menu</h1>
+      <table>
+        <tr><td>Spaghetti Bolognese</td><td align="right">₹250</td></tr>
+        <tr><td>Fettuccine Alfredo</td><td align="right">₹270</td></tr>
+        <tr><td>Penne Arrabbiata</td><td align="right">₹230</td></tr>
+        <tr><td>Macaroni and Cheese</td><td align="right">₹220</td></tr>
+        <tr><td>Lasagna</td><td align="right">₹300</td></tr>
+      </table>
+      <div class="details">Classic Italian pasta dishes served with rich sauces and fresh ingredients.</div>
+    </article>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <!-- Beverages -->
+  <div class="container closed">
+    <header>
+      <div class="header" style="background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20241217/pngtree-a-row-of-various-colorful-drinks-neatly-arranged-on-bar-countertop-image_16767335.jpg');"></div>
+      <div class="title">Beverages</div>
+    </header>
+    <article>
+      <h1>Beverages Menu</h1>
+      <table>
+        <tr><td>Fresh Lime Soda</td><td align="right">₹60</td></tr>
+        <tr><td>Iced Tea</td><td align="right">₹80</td></tr>
+        <tr><td>Mango Smoothie</td><td align="right">₹120</td></tr>
+        <tr><td>Cold Coffee</td><td align="right">₹90</td></tr>
+        <tr><td>Milkshake (Chocolate/Vanilla)</td><td align="right">₹130</td></tr>
+      </table>
+      <div class="details">A refreshing range of drinks, from coolers to creamy shakes.</div>
+    </article>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+ 
+  <!-- Pizza -->
+  <div class="container closed">
+    <header>
+      <div class="header" style="background-image: url('https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg');"></div>
+      <div class="title">Pizza</div>
+    </header>
+    <article>
+      <h1>Pizza Menu</h1>
+      <table>
+        <tr><td>Margherita</td><td align="right">₹200</td></tr>
+        <tr><td>Farmhouse</td><td align="right">₹270</td></tr>
+        <tr><td>Peppy Paneer</td><td align="right">₹280</td></tr>
+        <tr><td>Veggie Supreme</td><td align="right">₹300</td></tr>
+        <tr><td>Chicken Tikka Pizza</td><td align="right">₹320</td></tr>
+      </table>
+      <div class="details">Delicious cheesy pizzas topped with fresh veggies and premium meats.</div>
+    </article>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <!-- Cake -->
+  <div class="container closed">
+    <header>
+      <div class="header" style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/037/898/952/small/gourmet-desserts-and-specialty-coffee-in-elegant-patisserie-with-blurred-bokeh-background-free-photo.jpeg');"></div>
+      <div class="title">Cake</div>
+    </header>
+    <article>
+      <h1>Cake Menu</h1>
+      <table>
+        <tr><td>Chocolate Truffle</td><td align="right">₹150/slice</td></tr>
+        <tr><td>Red Velvet</td><td align="right">₹180/slice</td></tr>
+        <tr><td>Cheesecake</td><td align="right">₹200/slice</td></tr>
+        <tr><td>Black Forest</td><td align="right">₹160/slice</td></tr>
+        <tr><td>Butterscotch Delight</td><td align="right">₹140/slice</td></tr>
+      </table>
+      <div class="details">Sweet treats for every occasion, freshly baked and indulgent.</div>
+    </article>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <br>
+  <!-- Momos -->
+  <div class="container closed">
+    <header>
+      <div class="header" style="background-image: url('https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/jagowcbuoqcmruanjybg');"></div>
+      <div class="title">Momos</div>
+    </header>
+    <article>
+      <h1>Momos Menu</h1>
+      <table>
+        <tr><td>Veg Steamed Momos</td><td align="right">₹100</td></tr>
+        <tr><td>Chicken Fried Momos</td><td align="right">₹130</td></tr>
+        <tr><td>Paneer Momos</td><td align="right">₹120</td></tr>
+        <tr><td>Cheese Momos</td><td align="right">₹140</td></tr>
+        <tr><td>Spicy Schezwan Momos</td><td align="right">₹150</td></tr>
+      </table>
+      <div class="details">Hot and juicy momos served with flavorful dips and sauces.</div>
+    </article>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <!-- JavaScript for toggling -->
+  <script>
+    document.querySelectorAll(".container header").forEach(header => {
+      header.addEventListener("click", function () {
+        this.parentElement.classList.toggle("closed");
+      });
+    });
+  </script>
+
+</body>
+</html>
