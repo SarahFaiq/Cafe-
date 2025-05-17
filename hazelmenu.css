@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&family=EB+Garamond:ital,wght@0,500;1,800&display=swap');
+/*----------------home page----------------------*/
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', serif;
+    cursor: default;
+}
+
+body, html {
+    height: 100%;
+}
+
+/* Background */
+body {
+  background-image: url("https://thedailyguardian.com/wp-content/uploads/2023/11/2-The-Hazelnut-Factory-2-scaled.jpg"); /* Ensure correct file name and path */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+    margin-left: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    cursor: pointer;
+    color: #ffd700;
+}
+
+/* Dropdown */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    min-width: 160px;
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    display: block;
+    color: white;
+    transition: background 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background: #444;
+}
+
+/* Main Section */
+.main-section {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    height: calc(100vh - 100px);
+}
+
+/* About Section */
+.about-section {
+    flex: 1;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    margin-right: 30px;
+    border-radius: 10px;
+}
+
+.about-section h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+/* video */
+.video-section {
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-section video {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Animation */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-120%); }
+}
+/*----------------Shide nav bar -----------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.btn{
+    text-decoration: none;
+    color: #fff;    
+}
+
+
+.items {
+  padding: 20px 0;
+  display: none;
+}
+
+.active .items{
+    display: block;
+}
+
+
+.items ul {
+  list-style: none;
+}
+.items ul li {
+  background: rgba(255, 255, 255, 0.2);
+  margin: 10px 0;
+  height: 40px;
+  transition: 0.5s ease-in;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.items li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 10px;
+  letter-spacing: 1px;
+}
+

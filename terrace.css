@@ -1,0 +1,146 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', serif;
+    cursor: default;
+}
+
+body, html {
+    height: 100%;
+}
+
+/* Background */
+body {
+   background-image: url('https://d4t7t8y8xqo0t.cloudfront.net/app/resized/750X/restaurant/660250/restaurant120200320093436.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+    margin-left: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    cursor: pointer;
+    color: #ffd700;
+}
+
+/* Dropdown */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    min-width: 160px;
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    display: block;
+    color: white;
+    transition: background 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background: #444;
+}
+
+/* Main Section */
+.main-section {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    height: calc(100vh - 100px);
+}
+
+/* About Section */
+.about-section {
+    flex: 1;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    margin-right: 30px;
+    border-radius: 10px;
+}
+
+.about-section h1 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.about-section p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+/* Gallery */
+.gallery {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.image-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    animation: slide 20s linear infinite;
+}
+
+.image-slider img {
+    width: 300px;
+    height:600px;
+    margin: 10px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Animation */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-120%); }
+}
